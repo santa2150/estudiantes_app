@@ -61,16 +61,31 @@ class EstudianteController implements IController
     '" . $estudianteModel->get('apellidos') . "',
     " . $estudianteModel->get('edad') . ")";
         $conexionDB = new conexionDB();
-    $resultQuery = $conexionDB->getResultQuery($sql);
-    $conexionDB->close();
-    return $resultQuery;
+        $resultQuery = $conexionDB->getResultQuery($sql);
+        $conexionDB->close();
+        return $resultQuery;
     }
 
     public function update($id, $estudianteModel)
     {
+        $sql = "update estudiantes set ";
+        $sql .= "codigo='" . $estudianteModel->get('codigo') . "',";
+        $sql .= "nombres='" . $estudianteModel->get('nombres') . "',";
+        $sql .= "apellidos='" . $estudianteModel->get('apellidos') . "',";
+        $sql .= "edad='" . $estudianteModel->get('edad');
+        $sql .= "where id=" . $id;
+        $conexionDB = new ConexionDB();
+        $resultQuery = $conexionDB->getResultQuery($sql);
+        $conexionDB->close();
+        return $resultQuery;
     }
 
     public function delete($id)
     {
+        $sql = "delete form estudiantes where id=" . $id;
+        $conexionDB = new ConexionDB();
+        $resultQuery = $conexionDB->getResultQuery($sql);
+        $conexionDB->close();
+        return $resultQuery;
     }
 }
