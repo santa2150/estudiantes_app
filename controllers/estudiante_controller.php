@@ -6,8 +6,6 @@ use controllers\IController;
 use db\conexionDB;
 use models\Estudiante;
 
-use function PHPSTORM_META\sql_injection_subst;
-
 class EstudianteController implements IController
 {
 

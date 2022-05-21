@@ -37,7 +37,7 @@ $estudianteController = new EstudianteController();
                 <th>Modificar</th>
             </tr>
             <tr>
-                <th>Elominar+</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
